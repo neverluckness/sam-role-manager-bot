@@ -1,6 +1,6 @@
 {
   "name": "role-manager-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SAM discord role manager",
   "main": "app.js",
   "scripts": {
