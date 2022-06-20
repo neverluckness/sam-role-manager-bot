@@ -79,8 +79,8 @@ const modFaction = async (interaction) => {
     if (!isMemberMod) return interaction.reply({ content: `🟥 У вас не достаточно прав.`, ephemeral: true })
 
     let group = interaction.options.getString("group")
-    let member = guild.members.cache.get(interaction.options.getUser("target").id)
     let guild = client.guilds.cache.get("268016248585977873")
+    let member = guild.members.cache.get(interaction.options.getUser("target").id)
     let role = guild.roles.cache.get(group)
 
     if (member.roles.cache.has(role)) {
@@ -95,6 +95,6 @@ const modFaction = async (interaction) => {
         }
     })
 
-    interaction.member.roles.add(role)
+    member.roles.add(role)
     interaction.reply({ content: `✅ Модератор ${interaction.user} изменил группировку пользователю ${member.user}.`, ephemeral: false })
 }
